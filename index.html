@@ -6,6 +6,7 @@
     <title>Bootstrap demo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">   
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2.css/bootstrap-theme.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
   <body>
     <div class="jumbotron">
@@ -16,42 +17,91 @@
           <a class="btn btn-primary btn-lg" href="#" role="button">Contact Me</a>
       </p>
     </div>
-    <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary">Home</button>
-      <button type="button" class="btn btn-secondary" a href="resume.html">Skills & Experience</button>
-      <button type="button" class="btn btn-secondary">Photography</button>
-      <button type="button" class="btn btn-secondary">Videography </button>
+    <div class="d-flex justify-content-center">
+      <div class="btn-group" role="group" aria-label="Basic example">
+          <a href="index.html" class="btn btn-secondary">Home</a>
+          <a href="resume.html" class="btn btn-secondary">Skills & Experience</a>
+          <a href="https://photos.app.goo.gl/zwn9vT4HYDbuC8kr5" class="btn btn-secondary">Photography</a>
+          <a href="https://vimeo.com/user10858954" class="btn btn-secondary">Videography</a>
+      </div>
+  </div>
+  
+  
     </div>
     </div>
-    </div>
-    <div class="mx-auto" style="width: 1500px;">
     <div class="'container">
       <div>
         <div class="column"> 
         <h2> Who am I?</h2> 
           <p> I'm Aralia, an freelance photographer and videographer. When I'm not capturing moments, I operate a Twitch Channel, <a href="https://twitch.tv/djdragon7k">dJDragon7k</a>. I spend some of my free time playing the games some friends and I enjoy along with the funny banter between a small group gaming nerds.</p>
           <h3>Portfolio <span class="badge badge-secondary">New</span></h3>
-          <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/189901977?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:75%;height:50%;" title="Demo Reel Spring 2016"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-          <h2>Skills & Experience</h2>
-        <table class="table">
-          <thread>
-            <tr>
-              <th scope="col"></th>
-              <th scope="col">Skills</th>
-              <th scope="col">Experience</th>
-            </tr>
-          </thread>
-          <tbody>
-            <tr>
-              <th scope="col"></th>
-              <td>Mircosoft Office</td>
-              <td>Adobe Creative Suite/Cloud</td>
-            </tr>
-            <th scope="col"></th>
-            <td>10+ Years</td>
-            <td>6 Years</td>
-          </tbody>
-        </table> 
+            <!-- Media Carousel -->
+<div id="videoCarousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+      <li data-target="#videoCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#videoCarousel" data-slide-to="1"></li>
+      <li data-target="#videoCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <div class="carousel-inner">
+      <!-- Vimeo Video -->
+      <div class="carousel-item active">
+          <div class="embed-responsive embed-responsive-16by9">
+              <!-- Spinner -->
+              <div class="spinner-border text-primary position-absolute top-50 start-50" role="status"></div>
+              <iframe class="embed-responsive-item video-frame" 
+                      src="https://player.vimeo.com/video/189901977" 
+                      frameborder="0" allowfullscreen 
+                      onload="hideSpinner(this)">
+              </iframe>
+          </div>
+      </div>
+
+      <!-- Twitch Clip 1 -->
+      <div class="carousel-item">
+          <div class="embed-responsive embed-responsive-16by9">
+              <div class="spinner-border text-primary position-absolute top-50 start-50" role="status"></div>
+              <iframe class="embed-responsive-item video-frame" 
+                      src="https://clips.twitch.tv/embed?clip=AgreeableSpinelessStingrayAliens-v8wNursz7KD-Zgb1&parent=localhost" 
+                      frameborder="0" allowfullscreen 
+                      onload="hideSpinner(this)">
+              </iframe>
+          </div>
+      </div>
+
+      <!-- Twitch Clip 2 -->
+      <div class="carousel-item">
+          <div class="embed-responsive embed-responsive-16by9">
+              <div class="spinner-border text-primary position-absolute top-50 start-50" role="status"></div>
+              <iframe class="embed-responsive-item video-frame" 
+                      src="https://clips.twitch.tv/embed?clip=TallBenevolentWaspOneHand&parent=localhost" 
+                      frameborder="0" allowfullscreen 
+                      onload="hideSpinner(this)">
+              </iframe>
+          </div>
+      </div>
+  </div>
+
+  <!-- Carousel Controls -->
+  <a class="carousel-control-prev" href="#videoCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#videoCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+  </a>
+</div>
+          <!-- JavaScript to Hide Spinner When Video Loads -->
+<script>
+  function hideSpinner(iframe) {
+      // Find the spinner next to the iframe and hide it
+      let spinner = iframe.previousElementSibling;
+      if (spinner) {
+          spinner.style.display = "none";
+      }
+  }
+</script>
       </div>
       </div>  
     </div>
