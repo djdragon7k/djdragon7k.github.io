@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">   
      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <style>
+      /* Optional: Center the spinner (if added) or any content over the carousel */
+      .carousel-item .embed-responsive {
+        position: relative;
+      }
+    </style>
 </head>
   <body>
     <div class="jumbotron">
@@ -60,62 +66,62 @@
           </div>
           
           <h3>Demo Reel <span class="badge badge-secondary">New</span></h3>
-            <!-- Media Carousel -->
+<!-- Carousel -->
 <div id="videoCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Carousel Indicators -->
   <ol class="carousel-indicators">
-      <li data-target="#videoCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#videoCarousel" data-slide-to="1"></li>
-      <li data-target="#videoCarousel" data-slide-to="2"></li>
+    <li data-target="#videoCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#videoCarousel" data-slide-to="1"></li>
+    <li data-target="#videoCarousel" data-slide-to="2"></li>
   </ol>
-
+  <!-- Carousel Items -->
   <div class="carousel-inner">
-      <!-- Vimeo Video -->
-      <div class="carousel-item active">
-          <div class="embed-responsive embed-responsive-16by9">
-              <!-- Spinner -->
-              <div class="spinner-border text-primary position-absolute top-50 start-50" role="status"></div>
-              <iframe class="embed-responsive-item video-frame" 
-                      src="https://player.vimeo.com/video/189901977" 
-                      frameborder="0" allowfullscreen 
-                      onload="hideSpinner(this)">
-              </iframe>
-          </div>
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item"
+                src="https://player.vimeo.com/video/189901977"
+                frameborder="0"
+                allowfullscreen></iframe>
       </div>
-
-      <!-- Twitch Clip 1 Placeholder -->
-      <div class="carousel-item">
-          <div class="embed-responsive embed-responsive-16by9">
-              <div class="spinner-border text-primary position-absolute top-50 start-50" role="status"></div>
-              <iframe class="embed-responsive-item video-frame" 
-                      src="https://clips.twitch.tv/embed?clip=AgreeableSpinelessStingrayAliens-v8wNursz7KD-Zgb1&parent=localhost" 
-                      frameborder="0" allowfullscreen 
-                      onload="hideSpinner(this)">
-              </iframe>
-          </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item"
+                src="https://clips.twitch.tv/embed?clip=AgreeableSpinelessStingrayAliens-v8wNursz7KD-Zgb1&parent=localhost"
+                frameborder="0"
+                allowfullscreen></iframe>
       </div>
-
-      <!-- Twitch Clip 2 Placeholder-->
-      <div class="carousel-item">
-          <div class="embed-responsive embed-responsive-16by9">
-              <div class="spinner-border text-primary position-absolute top-50 start-50" role="status"></div>
-              <iframe class="embed-responsive-item video-frame" 
-                      src="https://clips.twitch.tv/embed?clip=TallBenevolentWaspOneHand&parent=localhost" 
-                      frameborder="0" allowfullscreen 
-                      onload="hideSpinner(this)">
-              </iframe>
-          </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item"
+                src="https://clips.twitch.tv/embed?clip=TallBenevolentWaspOneHand&parent=localhost"
+                frameborder="0"
+                allowfullscreen></iframe>
       </div>
+    </div>
   </div>
 
   <!-- Carousel Controls -->
   <a class="carousel-control-prev" href="#videoCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
   </a>
   <a class="carousel-control-next" href="#videoCarousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
   </a>
+</div>
+ <!-- Dynamic Progress Bar -->
+ <div class="progress mt-3" style="height: 15px;">
+  <div class="progress-bar" role="progressbar"
+       style="width: 33%;" 
+       aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+  </div>
+</div>
   <!-- Pagination Component -->
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center">
