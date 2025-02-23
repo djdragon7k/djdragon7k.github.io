@@ -6,29 +6,105 @@
     <title>Bootstrap demo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">   
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2.css/bootstrap-theme.min.css">
+     <style>
+      body {
+          font-family: Arial, sans-serif;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: #f4f4f4;
+          margin: 0;
+      }
+      .navbar {
+          width: 100%;
+          background: #f31212;
+          padding: 15px;
+          text-align: center;
+      }
+      .navbar a {
+          color: white;
+          text-decoration: none;
+          margin: 0 15px;
+          font-size: 18px;
+      }
+      .container {
+          background: white;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          margin-top: 20px;
+          max-width: 90%;
+      }
+      .jumbotron {
+          width: 90%;
+          margin: auto;
+          padding: 30px;
+      }
+      input, textarea {
+          width: 100%;
+          padding: 10px;
+          margin: 10px 0;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+      }
+      button {
+          background: #f31212;
+          color: white;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+      button:hover {
+          background: #f31212;
+      }
+      .carousel-container {
+          width: 80%;
+          max-width: 1200px;
+          margin: auto;
+      }
+      .carousel-inner iframe {
+          width: 100%; 
+          height: 70vh; 
+      }
+      @media (min-width: 2560px) { /* Responsive for 32 inch and larger screens */
+          .container {
+              max-width: 70%;
+              font-size: 1.5rem;
+          }
+          .jumbotron {
+              max-width: 80%;
+              font-size: 1.5rem;
+          }
+          .navbar a {
+              font-size: 1.8rem;
+          }
+          .jumbotron h1 {
+              font-size: 3rem;
+          }
+          .carousel-container {
+              max-width: 1400px;
+          }
+      }
+    </style>
 </head>
   <body>
     <div class="jumbotron">
       <h1 class="display-4">AA Media</h1>
       <p class="lead"> Cameras, Computers and Consoles rule the domain.</p>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Menu
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="index.html">Home </a></li>
-          <li><a class="dropdown-item" href="resume.html">Resume </a></li>
-          <li><a class="dropdown-item" href="https://photos.app.goo.gl/zwn9vT4HYDbuC8kr5">Photography Albums </a></li>
-          <li><a class="dropdown-item" href="https://vimeo.com/djdragon7k">Videography </a></li>
-          <li><a class="dropdown-item" href="http://twitch.tv/djdragon7k">Twitch Channel </a></li>
-          <li><a class="dropdown-item" href="https://www.youtube.com/@dJDragon7k"> Youtube Channel </a></li>
-        </ul>
+      <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Skills and Experience</a>
+        <a href="https://photos.app.goo.gl/zwn9vT4HYDbuC8kr5" target="_blank" rel="noopener noreferrer">Photography</a>
+        <a href="http://vimeo.com/djdragon7k" target="_blank" rel="noopener noreferrer">Videos</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    
       <hr class="my-4">
       <p class="lead">
         <a href="mailto:aralia@aamedia.me?subject=Hello&body=This is a message" class="btn btn-primary">Send Email</a>
       </p>
     </div>
-    
       <!--
     <div class="d-flex justify-content-center">
       <div class="btn-group" role="group" aria-label="Basic example">
