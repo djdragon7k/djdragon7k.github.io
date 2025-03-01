@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AA Media Productions</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">   
-     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-     <style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
       body {
           font-family: Arial, sans-serif;
           display: flex;
@@ -88,95 +88,145 @@
           }
       }
     </style>
-</head>
-<body>
-  <div class="jumbotron">
-    <h1 class="display-4">AA Media</h1>
-    <p class="lead"> Cameras, Computers and Consoles rule the domain.</p>
-    <div class="navbar">
-      <a href="index.html">Home</a>
-      <a href="resume.html">Skills and Experience</a>
-      <a href="https://photos.app.goo.gl/zwn9vT4HYDbuC8kr5" target="_blank" rel="noopener noreferrer">Photography</a>
-      <a href="http://vimeo.com/djdragon7k" target="_blank" rel="noopener noreferrer">Videos</a>
-      <a href="contact.html">Contact</a>
-  </div>
-  <hr class="my-4">
-  <p class="lead">
-    <a href="mailto:aralia@aamedia.me?subject=Hello&body=This is a message" class="btn btn-primary">Send Email</a>
-  </p>
-  </div>
-  <!--My Wildcard, Media Carousel for showcaseing videos and photos-->
-  <div class="carousel-container">
-    <div id="videoCarousel" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#videoCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#videoCarousel" data-slide-to="1"></li>
-        <li data-target="#videoCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/189901977" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://clips.twitch.tv/embed?clip=AgreeableSpinelessStingrayAliens-v8wNursz7KD-Zgb1&parent=localhost" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://clips.twitch.tv/embed?clip=TallBenevolentWaspOneHand&parent=localhost" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
+  </head>
+  <body>
+  <!-- Toast Container -->
+<div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+  <div class="toast" id="helloToast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000">
+    <div class="toast-header">
+      <img src="helloworld.jpg" class="rounded mr-2" alt="Hello World" width="20" height="20">
+      <strong class="mr-auto">Hello World</strong>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-  </div>
- <!-- Dynamic Progress Bar -->
- <div class="progress mt-3" style="height: 15px;">
-  <div class="progress-bar" role="progressbar"
-       style="width: 33%;" 
-       aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+    <div class="toast-body">
+      Hello World!
+    </div>
   </div>
 </div>
-  <!-- Pagination Component -->
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-      <li class="page-item disabled">
-          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-      </li>
-      <li class="page-item active"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="resume.html">2</a></li>
-      <li class="page-item"><a class="page-link" href="https://photos.google.com/share/AF1QipPP8aTkqEz51kPHRSKzP9iO2OwLpRWib5c9ZkGpHmLMX-TOTBSOmckPg_Ua6yUXrA?key=ekJMRmJhalFickduUmNHODlFY1hBaHdUTHYxOFZR">3</a></li>
-      <li class="page-item"><a class="page-link" href="https://vimeo.com/user10858954">4</a></li>
-      <li class="page-item">
-          <a class="page-link" href="#">Next</a>
-      </li>
-  </ul>
-</nav>
-</div>
-          <!-- JavaScript to Hide Spinner When Video Loads -->
-<script>
-  function hideSpinner(iframe) {
-      // Find the spinner next to the iframe and hide it
-      let spinner = iframe.previousElementSibling;
-      if (spinner) {
-          spinner.style.display = "none";
-      }
-  }
-</script>
-      </div>
-      </div>  
-    </div>
-    </div>
-  </div>
 
-    <!--Javascript-->
+<!-- JavaScript to Trigger Toast -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var toastElement = document.getElementById("helloToast");
+    var toast = new bootstrap.Toast(toastElement, { delay: 5000 }); // Auto-close in 5s
+    toast.show();
+  });
+</script>
+    <div class="jumbotron">
+      <h1 class="display-4">AA Media</h1>
+      <p class="lead"> Cameras, Computers and Consoles rule the domain.</p>
+      <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="About.html">About Me</a>
+        <a href="resume.html">Skills and Experience</a>
+        <a href="https://photos.app.goo.gl/zwn9vT4HYDbuC8kr5" target="_blank" rel="noopener noreferrer">Photography</a>
+        <a href="http://vimeo.com/djdragon7k" target="_blank" rel="noopener noreferrer">Videos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <hr class="my-4">
+      <p class="lead">
+        <a href="mailto:aralia@aamedia.me?subject=Hello&body=This is a message" 
+           class="btn btn-primary" 
+           data-toggle="popover" 
+           data-content="Send us an email to connect!" 
+           data-placement="top">
+           Send Email
+        </a>
+      </p>
+    </div>
+    <div class="alert alert-primary">
+      Don't be alerted :P JK..
+    </div>
+ <!-- Media Carousel for showcasing videos and photos -->
+<div class="carousel-container">
+  <div id="videoCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#videoCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#videoCarousel" data-slide-to="1"></li>
+      <li data-target="#videoCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Carousel Items -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/189901977" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://clips.twitch.tv/embed?clip=AgreeableSpinelessStingrayAliens-v8wNursz7KD-Zgb1&parent=localhost" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://clips.twitch.tv/embed?clip=TallBenevolentWaspOneHand&parent=localhost" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="carousel-control-prev" href="#videoCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#videoCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<!-- Disable autoplay on load -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    $('#videoCarousel').carousel({
+      interval: false  // Disable auto sliding
+    });
+  });
+</script>
+    <!-- Dynamic Progress Bar -->
+    <div class="progress mt-3" style="height: 15px;">
+      <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <!-- Pagination Component -->
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="resume.html">2</a></li>
+        <li class="page-item"><a class="page-link" href="https://photos.google.com/share/AF1QipPP8aTkqEz51kPHRSKzP9iO2OwLpRWib5c9ZkGpHmLMX-TOTBSOmckPg_Ua6yUXrA?key=ekJMRmJhalFickduUmNHODlFY1hBaHdUTHYxOFZR">3</a></li>
+        <li class="page-item"><a class="page-link" href="https://vimeo.com/user10858954">4</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- JavaScript to Hide Spinner When Video Loads -->
+    <script>
+      function hideSpinner(iframe) {
+          let spinner = iframe.previousElementSibling;
+          if (spinner) {
+              spinner.style.display = "none";
+          }
+      }
+
+      // Show the toast automatically when the page loads
+      $(document).ready(function() {
+        $('#helloWorldToast').toast('show');
+      });
+    </script>
+
+    <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--Compiled Javascript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
- 

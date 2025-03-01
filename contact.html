@@ -84,6 +84,12 @@
                 max-width: 1400px;
             }
         }
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+
       </style>
 </head>
 <body>
@@ -92,19 +98,25 @@
         <p class="lead"> Cameras, Computers and Consoles rule the domain.</p>
     <div class="navbar">
         <a href="index.html">Home</a>
+        <a href="About.html">About Me</a>
         <a href="resume.html">Skills and Experience</a>
         <a href="https://photos.app.goo.gl/zwn9vT4HYDbuC8kr5" target="_blank" rel="noopener noreferrer">Photography</a>
         <a href="http://vimeo.com/djdragon7k" target="_blank" rel="noopener noreferrer">Videos</a>
         <a href="contact.html">Contact</a>
     </div>
     
-
     <div class="container">
         <h2>Contact Me</h2>
-        <form id="contactForm">
+        <form id="contactForm" novalidate>
             <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <span class="error" id="nameError">Please enter your name.</span>
+    
             <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <span class="error" id="emailError">Please enter a valid email.</span>
+    
             <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            <span class="error" id="messageError">Please enter your message.</span>
+    
             <button type="submit">Send</button>
         </form>
     </div>
@@ -112,12 +124,49 @@
     <script>
         document.getElementById("contactForm").addEventListener("submit", function(event) {
             event.preventDefault();
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const message = document.getElementById("message").value;
-            
-            const mailtoLink = `mailto:aralia@aamedia.me?subject=Contact%20Form&body=Name:%20${name}%0AEmail:%20${email}%0AMessage:%20${message}`;
-            window.location.href = mailtoLink;
+            let isValid = true;
+    
+            const name = document.getElementById("name");
+            const email = document.getElementById("email");
+            const message = document.getElementById("message");
+    
+            const nameError = document.getElementById("nameError");
+            const emailError = document.getElementById("emailError");
+            const messageError = document.getElementById("messageError");
+    
+            // Name Validation
+            if (name.value.trim() === "") {
+                nameError.style.display = "block";
+                isValid = false;
+            } else {
+                nameError.style.display = "none";
+            }
+    
+            // Email Validation
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email.value.trim())) {
+                emailError.style.display = "block";
+                isValid = false;
+            } else {
+                emailError.style.display = "none";
+            }
+    
+            // Message Validation
+            if (message.value.trim() === "") {
+                messageError.style.display = "block";
+                isValid = false;
+            } else {
+                messageError.style.display = "none";
+            }
+    
+            // If valid, show confirmation alert
+            if (isValid) {
+                const confirmation = confirm("Are you sure you want to send this message?");
+                if (confirmation) {
+                    const mailtoLink = `mailto:aralia@aamedia.me?subject=Contact%20Form&body=Name:%20${encodeURIComponent(name.value)}%0AEmail:%20${encodeURIComponent(email.value)}%0AMessage:%20${encodeURIComponent(message.value)}`;
+                    window.location.href = mailtoLink;
+                }
+            }
         });
     </script>
     

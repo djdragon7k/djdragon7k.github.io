@@ -94,6 +94,7 @@
       <p class="lead"> Cameras, Computers and Consoles rule the domain.</p>
       <div class="navbar">
         <a href="index.html">Home</a>
+        <a href="About.html">About Me</a>
         <a href="resume.html">Skills and Experience</a>
         <a href="https://photos.app.goo.gl/zwn9vT4HYDbuC8kr5" target="_blank" rel="noopener noreferrer">Photography</a>
         <a href="http://vimeo.com/djdragon7k" target="_blank" rel="noopener noreferrer">Videos</a>
@@ -143,6 +144,125 @@
     </div>
     </div>
   </div>
+  <div class="container mt-4">
+    <!-- Filter Buttons -->
+    <div class="mb-4">
+        <button class="btn btn-primary filter-btn" data-filter="all">All Skills</button>
+        <button class="btn btn-primary filter-btn" data-filter="Computer">Computer</button>
+        <button class="btn btn-primary filter-btn" data-filter="programming">Programming</button>
+        <button class="btn btn-primary filter-btn" data-filter="design">Design</button>
+        <button class="btn btn-primary filter-btn" data-filter="communication">Communication</button>
+    </div>
+
+    <!-- Filtered Skills List -->
+    <div class="row" id="filtered-skills-list">
+        <!-- Skill 1 -->
+        <div class="col-md-4 skill-item design">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Video Editing</h5>
+                    <p class="card-text">Proficient in video editing software like Adobe Premiere Pro and Final Cut.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="col-md-4 skill-item design">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Photoshop</h5>
+                    <p class="card-text">Experienced in graphic design using Adobe Photoshop.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="col-md-4 skill-item Computer">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Computer Hardware Installation</h5>
+                    <p class="card-text">Installing and troubleshooting computer hardware and software.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="col-md-4 skill-item programming">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Python</h5>
+                    <p class="card-text">Basic Coding in Python.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill 5 -->
+        <div class="col-md-4 skill-item Computer">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Apple/iOS Software</h5>
+                    <p class="card-text">Experienced with Apple OS X and iOS software.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Skill 6-->
+        <div class="col-md-4 skill-item Computer">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Windows Software</h5>
+                  <p class="card-text">Experienced with Windows XP, Vista, 7, 8/8.1, 10 & 11 software.</p>
+              </div>
+          </div>
+      </div>
+      <!-- Skill 7-->
+      <div class="col-md-4 skill-item programming">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">HTML</h5>
+                <p class="card-text">Proficent in coding in html 4.0, html5 and XHTML</p>
+            </div>
+        </div>
+    </div>
+        <!-- Skill 8 -->
+        <div class="col-md-4 skill-item communication">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Audio Recording and Editing</h5>
+                    <p class="card-text">Proficient with Adobe Audition and Audacity.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Filtering -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const buttons = document.querySelectorAll(".filter-btn");
+        const skills = document.querySelectorAll(".skill-item");
+
+        function filterSkills(filter) {
+            skills.forEach(skill => {
+                if (filter === "all") {
+                    skill.style.display = "block"; // Show all skills
+                } else {
+                    skill.style.display = skill.classList.contains(filter) ? "block" : "none"; // Show only matching skills
+                }
+            });
+        }
+
+        // Show all skills on page load
+        filterSkills("all");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", function() {
+                const filter = this.getAttribute("data-filter");
+                filterSkills(filter);
+            });
+        });
+    });
+</script>
+
   <br />
   <br />
    <!-- Pagination Component -->
